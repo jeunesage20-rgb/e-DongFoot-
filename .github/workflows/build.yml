@@ -11,14 +11,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Récupérer le projet
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Installer Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 'stable'
           channel: stable
+
+      - name: Vérifier Flutter
+        run: flutter --version
 
       - name: Installer les dépendances
         run: flutter pub get
