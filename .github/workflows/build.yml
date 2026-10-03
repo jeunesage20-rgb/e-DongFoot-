@@ -23,6 +23,9 @@ jobs:
       - name: Vérifier Flutter
         run: flutter --version
 
+      - name: Générer les fichiers Android
+        run: flutter create --platforms=android .
+
       - name: Installer les dépendances
         run: flutter pub get
 
